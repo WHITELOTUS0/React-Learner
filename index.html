@@ -18,8 +18,15 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
       const rootElement = document.querySelector(".root");
+      //style
+      const headerStyles = {
+        backgroundColor: "#61DBFB",
+        fontFamily: "Helvetica Neue",
+        padding: 25,
+        lineHeight: 1.5,
+      };
       const header = (
-        <header>
+        <header style={headerStyles}>
           <h1>Welcome to 30 Days of React</h1>
           <h2>Getting Started React</h2>
           <h3>JavaScript Library</h3>
@@ -28,8 +35,11 @@
         </header>
       );
       // JSX element
+      const mainStyles = {
+        backgroundColor: "#F3F0F5",
+      };
       const main = (
-        <main>
+        <main style={mainStyles}>
           <p>Prerequisite to get started react.js:</p>
           <ul>
             <li>HTML</li>
@@ -39,9 +49,13 @@
         </main>
       );
       // JSX element
+      const footerStyles = {
+        backgroundColor: "#61DBFB",
+        textAlign: "center",
+      };
       const footer = (
-        <footer>
-          <p>Copyright 2020</p>
+        <footer style={footerStyles}>
+          <p>Copyright 2023</p>
         </footer>
       );
       const app = (
