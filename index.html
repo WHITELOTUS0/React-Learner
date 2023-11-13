@@ -120,7 +120,7 @@
         )
 
         const techs = ['HTML', 'JAVASCRIPT', 'CSS']
-        const formattedTechs = techs.map((n)=><li>{n}</li>)
+        const formattedTechs = techs.map((tech)=><li key={tech}>{tech}</li>)
   
         // JSX element, main
         const main = (
