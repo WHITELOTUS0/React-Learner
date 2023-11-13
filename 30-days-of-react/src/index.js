@@ -1,5 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import rickmorty from './images/RickAndMorty.jpeg'
+
+const user = (
+  <div>
+    <img src={rickmorty} alt='rick and morty' style={{ height: '300px', width: '300px' }} />
+  </div>
+)
 
 const welcome = 'Welcome to 30 Days of React'
         const title = 'Getting Started React'
@@ -38,6 +45,7 @@ const welcome = 'Welcome to 30 Days of React'
               </p>
               <ul>
                 {formattedTechs}
+                {user}
               </ul>
             </div>
           </main>
