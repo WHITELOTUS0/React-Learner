@@ -4,70 +4,70 @@ import rickmorty from './images/RickAndMorty.jpeg'
 
 const user = (
   <div>
-    <img src={rickmorty} alt='rick and morty' style={{ height: '300px', width: '300px' }} />
+    <img src={rickmorty} alt='rick and morty' style={{ height: '300px', width: '300px', borderRadius: '50%', overflow: 'hidden' }} />
   </div>
 )
 
 const welcome = 'Welcome to 30 Days of React'
-        const title = 'Getting Started React'
-        const subtitle = 'JavaScript Library'
-        const author = {
-          firstName: 'Glorry',
-          lastName: 'Sibomana',
-        }
+const title = 'Getting Started React'
+const subtitle = 'JavaScript Library'
+const author = {
+  firstName: 'Glorry',
+  lastName: 'Sibomana',
+}
 
-        // JSX element, header
-        const header = (
-          <header>
-            <div className='header-wrapper'>
-              <h1>{welcome}</h1>
-              <h2>{title}</h2>
-              <h3>{subtitle}</h3>
-              <p>{author.firstName} {author.lastName}</p>
-              <small>{new Date().toLocaleString()}</small>
-            </div>
-          </header>
-        )
+// JSX element, header
+const header = (
+  <header>
+    <div className='header-wrapper'>
+      <h1>{welcome}</h1>
+      <h2>{title}</h2>
+      <h3>{subtitle}</h3>
+      <p>{author.firstName} {author.lastName}</p>
+      <small>{new Date().toLocaleString()}</small>
+    </div>
+  </header>
+)
 
-        const techs = ['HTML', 'JAVASCRIPT', 'CSS']
-        const formattedTechs = techs.map((tech)=><li key={tech}>{tech}</li>)
-  
-        // JSX element, main
-        const main = (
-          <main>
-            <div className='main-wrapper'>
-              <p>
-                Prerequisite to get started{' '}
-                <strong>
-                  <em>react.js</em>
-                </strong>
-                :
-              </p>
-              <ul>
-                {formattedTechs}
-                {user}
-              </ul>
-            </div>
-          </main>
-        )
-  
-        // JSX element, footer
-        const footer = (
-          <footer>
-            <div className='footer-wrapper'>
-              <p>Copyright 2023</p>
-            </div>
-          </footer>
-        )
-  
-        // JSX element, app
-        const app = (
-          <div className='app'>
-            {header}
-            {main}
-            {footer}
-          </div>
-        )
+const techs = ['HTML', 'JAVASCRIPT', 'CSS']
+const formattedTechs = techs.map((tech) => <li key={tech}>{tech}</li>)
+
+// JSX element, main
+const main = (
+  <main>
+    <div className='main-wrapper'>
+      <p>
+        Prerequisite to get started{' '}
+        <strong>
+          <em>react.js</em>
+        </strong>
+        :
+      </p>
+      <ul>
+        {formattedTechs}
+        {user}
+      </ul>
+    </div>
+  </main>
+)
+
+// JSX element, footer
+const footer = (
+  <footer>
+    <div className='footer-wrapper'>
+      <p>Copyright 2023</p>
+    </div>
+  </footer>
+)
+
+// JSX element, app
+const app = (
+  <div className='app'>
+    {header}
+    {main}
+    {footer}
+  </div>
+)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
