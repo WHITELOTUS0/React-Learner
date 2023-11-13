@@ -118,6 +118,9 @@
             </div>
           </header>
         )
+
+        const techs = ['HTML', 'JAVASCRIPT', 'CSS']
+        const formattedTechs = techs.map((n)=><li>{n}</li>)
   
         // JSX element, main
         const main = (
@@ -131,9 +134,7 @@
                 :
               </p>
               <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li> JavaScript</li>
+                {formattedTechs}
               </ul>
             </div>
           </main>
