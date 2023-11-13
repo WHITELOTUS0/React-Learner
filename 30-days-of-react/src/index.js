@@ -1,10 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import rickmorty from './images/RickAndMorty.jpeg'
+import { motion } from 'framer-motion';
 
 const user = (
   <div>
-    <img src={rickmorty} alt='rick and morty' style={{ height: '300px', width: '300px', borderRadius: '50%', overflow: 'hidden' }} />
+    <motion.img src={rickmorty} alt='rick and morty' style={{ height: '300px', width: '300px', borderRadius: '50%', overflow: 'hidden' }} 
+   animate={{
+    x: ["0%", "200%", "100%"], // animate the image's horizontal position
+    y: ["0%", "0%", "0%"], // animate the image's vertical position
+  }}
+    transition={{
+      repeat: 0, // repeat the animation indefinitely
+      duration: 1, // duration of each animation cycle
+    }}
+    />
   </div>
 )
 
