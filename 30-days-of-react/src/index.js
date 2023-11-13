@@ -1,42 +1,65 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-const header = (
-  <header>
-    <h1>Welcome to 30 Days Of React</h1>
-    <h2>Getting Started React</h2>
-    <h3>JavaScript Library</h3>
-    <p>Sibomana Glorry</p>
-    <small>Nov 13, 2023</small>
-  </header>
-)
-// JSX element, main
-const main = (
-  <main>
-    <p>Prerequisite to get started react.js:</p>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
-  </main>
-)
+const welcome = 'Welcome to 30 Days of React'
+        const title = 'Getting Started React'
+        const subtitle = 'JavaScript Library'
+        const author = {
+          firstName: 'Glorry',
+          lastName: 'Sibomana',
+        }
 
-// JSX element, footer
-const footer = (
-  <footer>
-    <p>Copyright 2020</p>
-  </footer>
-)
+        // JSX element, header
+        const header = (
+          <header>
+            <div className='header-wrapper'>
+              <h1>{welcome}</h1>
+              <h2>{title}</h2>
+              <h3>{subtitle}</h3>
+              <p>{author.firstName} {author.lastName}</p>
+              <small>{new Date().toLocaleString()}</small>
+            </div>
+          </header>
+        )
 
-// JSX element, app, a container or a parent
-const app = (
-  <div>
-    {header}
-    {main}
-    {footer}
-  </div>
-)
+        const techs = ['HTML', 'JAVASCRIPT', 'CSS']
+        const formattedTechs = techs.map((tech)=><li key={tech}>{tech}</li>)
+  
+        // JSX element, main
+        const main = (
+          <main>
+            <div className='main-wrapper'>
+              <p>
+                Prerequisite to get started{' '}
+                <strong>
+                  <em>react.js</em>
+                </strong>
+                :
+              </p>
+              <ul>
+                {formattedTechs}
+              </ul>
+            </div>
+          </main>
+        )
+  
+        // JSX element, footer
+        const footer = (
+          <footer>
+            <div className='footer-wrapper'>
+              <p>Copyright 2023</p>
+            </div>
+          </footer>
+        )
+  
+        // JSX element, app
+        const app = (
+          <div className='app'>
+            {header}
+            {main}
+            {footer}
+          </div>
+        )
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
