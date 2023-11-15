@@ -18,7 +18,6 @@ const UserCard = () => (
   </div>
 )
 
-const welcome = 'Welcome to 30 Days of React'
 const title = 'Getting Started React'
 const subtitle = 'JavaScript Library'
 const author = {
@@ -27,17 +26,19 @@ const author = {
 }
 
 // JSX element, header
-const Header = () => (
+const Header = (props) => {
+  console.log(props)
+  return(
   <header>
     <div className='header-wrapper'>
-      <h1>{welcome}</h1>
+      <h1>{props.welcome}</h1>
       <h2>{title}</h2>
       <h3>{subtitle}</h3>
       <p>{author.firstName} {author.lastName}</p>
       <small>{new Date().toLocaleString()}</small>
     </div>
   </header>
-)
+)}
 
 const TechList = () => {
   const techs = ['HTML', 'JAVASCRIPT', 'CSS']
@@ -78,7 +79,7 @@ const Footer =()=> (
 // JSX element, app
 const App = ()=>(
   <div className='app'>
-    <Header/>
+    <Header welcome = 'Welcome to 30 Days of React'/>
     <Main/>
     <Footer/>
   </div>
