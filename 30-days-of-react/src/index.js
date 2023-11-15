@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom/client';
 import rickmorty from './images/RickAndMorty.jpeg'
 import { motion } from 'framer-motion';
 
-const user = (
+const UserCard = () => (
   <div>
-    <motion.img src={rickmorty} alt='rick and morty' style={{ height: '300px', width: '300px', borderRadius: '50%', overflow: 'hidden' }} 
-   animate={{
-    x: ["0%", "200%", "100%"], // animate the image's horizontal position
-    y: ["0%", "0%", "0%"], // animate the image's vertical position
-  }}
-    transition={{
-      repeat: 0, // repeat the animation indefinitely
-      duration: 1, // duration of each animation cycle
-    }}
+    <motion.img src={rickmorty} alt='rick and morty' style={{ height: '300px', width: '300px', borderRadius: '50%', overflow: 'hidden' }}
+      animate={{
+        x: ["0%", "200%", "100%"], // animate the image's horizontal position
+        y: ["0%", "0%", "0%"], // animate the image's vertical position
+      }}
+      transition={{
+        repeat: 0, // repeat the animation indefinitely
+        duration: 3, // duration of each animation cycle
+      }}
     />
   </div>
 )
@@ -27,7 +27,7 @@ const author = {
 }
 
 // JSX element, header
-const header = (
+const Header = () => (
   <header>
     <div className='header-wrapper'>
       <h1>{welcome}</h1>
@@ -39,11 +39,15 @@ const header = (
   </header>
 )
 
-const techs = ['HTML', 'JAVASCRIPT', 'CSS']
-const formattedTechs = techs.map((tech) => <li key={tech}>{tech}</li>)
+const TechList = () => {
+  const techs = ['HTML', 'JAVASCRIPT', 'CSS']
+  const formattedTechs = techs.map((tech) => <li key={tech}>{tech}</li>)
+  return formattedTechs
+}
+
 
 // JSX element, main
-const main = (
+const Main =()=> (
   <main>
     <div className='main-wrapper'>
       <p>
@@ -54,15 +58,15 @@ const main = (
         :
       </p>
       <ul>
-        {formattedTechs}
-        {user}
+        <TechList/>
+        <UserCard/>
       </ul>
     </div>
   </main>
 )
 
 // JSX element, footer
-const footer = (
+const Footer =()=> (
   <footer>
     <div className='footer-wrapper'>
       <p>Copyright 2023</p>
@@ -71,18 +75,18 @@ const footer = (
 )
 
 // JSX element, app
-const app = (
+const App = ()=>(
   <div className='app'>
-    {header}
-    {main}
-    {footer}
+    <Header/>
+    <Main/>
+    <Footer/>
   </div>
 )
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {app}
+    <App/>
   </React.StrictMode>
 );
 
