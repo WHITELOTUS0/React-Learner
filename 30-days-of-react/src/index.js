@@ -3,6 +3,28 @@ import ReactDOM from 'react-dom/client';
 import rickmorty from './images/RickAndMorty.jpeg'
 import { motion } from 'framer-motion';
 
+const showDate = (time) => {
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ]
+
+  const month = months[time.getMonth()].slice(0, 3)
+  const year = time.getFullYear()
+  const date = time.getDate()
+  return ` ${month} ${date}, ${year}`
+}
+
 const UserCard = () => (
   <div>
     <motion.img src={rickmorty} alt='rick and morty' style={{ height: '300px', width: '300px', borderRadius: '50%', overflow: 'hidden' }}
@@ -21,15 +43,17 @@ const UserCard = () => (
 
 // JSX element, header
 const Header = (props) => {
-  console.log(props)
+  const data = props.data
+  const { welcome, title, subtitle, author, date } = data
+  const { firstName, lastName } = author
   return (
     <header>
       <div className='header-wrapper'>
-        <h1>{props.welcome}</h1>
-        <h2>{props.title}</h2>
-        <h3>{props.subtitle}</h3>
-        <p>{props.firstName} {props.lastName}</p>
-        <small>{new Date().toLocaleString()}</small>
+        <h1>{welcome}</h1>
+        <h2>{title}</h2>
+        <h3>{subtitle}</h3>
+        <p>{firstName} {lastName}</p>
+        <small>{showDate(date)}</small>
       </div>
     </header>
   )
@@ -73,22 +97,21 @@ const Footer = () => (
 
 // JSX element, app
 const App = () => {
-  const welcome = 'Welcome to 30 Days of React'
-  const title = 'Getting Started React'
-  const subtitle = 'JavaScript Library'
-  const author = {
-    firstName: 'Glorry',
-    lastName: 'Sibomana',
+  const data = {
+    welcome: 'Welcome to 30 Days Of React',
+    title: 'Getting Started React',
+    subtitle: 'JavaScript Library',
+    author: {
+      firstName: 'Glorry',
+      lastName: 'Sibomana',
+    },
+    date: new Date(),
   }
+
+
   return (
     <div className='app'>
-      <Header
-        welcome={welcome}
-        title={title}
-        subtitle={subtitle}
-        firstName={author.firstName}
-        lastName={author.lastName}
-      />
+      <Header data={data} />
       <Main />
       <Footer />
     </div>
