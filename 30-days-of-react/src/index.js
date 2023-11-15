@@ -28,7 +28,7 @@ const Header = (props) => {
         <h1>{props.welcome}</h1>
         <h2>{props.title}</h2>
         <h3>{props.subtitle}</h3>
-        <p>{props.author.firstName} {props.author.lastName}</p>
+        <p>{props.firstName} {props.lastName}</p>
         <small>{new Date().toLocaleString()}</small>
       </div>
     </header>
@@ -72,21 +72,29 @@ const Footer = () => (
 )
 
 // JSX element, app
-const App = () => (
-  <div className='app'>
-    <Header
-      welcome='Welcome to 30 Days of React'
-      title='Getting Started React'
-      subtitle='JavaScript Library'
-      author={{
-        firstName: 'Glorry',
-        lastName: 'Sibomana',
-      }}
-    />
-    <Main />
-    <Footer />
-  </div>
-)
+const App = () => {
+  const welcome = 'Welcome to 30 Days of React'
+  const title = 'Getting Started React'
+  const subtitle = 'JavaScript Library'
+  const author = {
+    firstName: 'Glorry',
+    lastName: 'Sibomana',
+  }
+  return (
+    <div className='app'>
+      <Header
+        welcome={welcome}
+        title={title}
+        subtitle={subtitle}
+        firstName={author.firstName}
+        lastName={author.lastName}
+      />
+      <Main />
+      <Footer />
+    </div>
+  )
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
