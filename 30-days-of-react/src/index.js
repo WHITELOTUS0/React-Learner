@@ -42,10 +42,20 @@ const UserCard = () => (
 
 
 // JSX element, header
-const Header = (props) => {
-  const data = props.data
-  const { welcome, title, subtitle, author, date } = data
-  const { firstName, lastName } = author
+const Header = (
+  {
+    data: {
+      welcome,
+      title,
+      subtitle,
+      author: { firstName, lastName },
+      date,
+    },
+  }
+) => {
+  // const data = props.data
+  // const { welcome, title, subtitle, author: { firstName, lastName }, date } = data
+  //const { firstName, lastName } = author
   return (
     <header>
       <div className='header-wrapper'>
