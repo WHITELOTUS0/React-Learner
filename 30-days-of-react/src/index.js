@@ -65,11 +65,12 @@ const Main =()=> (
   </main>
 )
 
+const copyRight = '2023';
 // JSX element, footer
 const Footer =()=> (
   <footer>
     <div className='footer-wrapper'>
-      <p>Copyright 2023</p>
+      <p>Copyright &copy;{copyRight}</p>
     </div>
   </footer>
 )
@@ -93,4 +94,14 @@ root.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
+// const hexaColor = () => {
+//   let str = '0123456789abcdef'
+//   let color = ''
+//   for (let i = 0; i < 6; i++) {
+//     let index = Math.floor(Math.random() * str.length)
+//     color += str[index]
+//   }
+//   return '#' + color
+// }
 
