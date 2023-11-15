@@ -18,27 +18,22 @@ const UserCard = () => (
   </div>
 )
 
-const title = 'Getting Started React'
-const subtitle = 'JavaScript Library'
-const author = {
-  firstName: 'Glorry',
-  lastName: 'Sibomana',
-}
 
 // JSX element, header
 const Header = (props) => {
   console.log(props)
-  return(
-  <header>
-    <div className='header-wrapper'>
-      <h1>{props.welcome}</h1>
-      <h2>{title}</h2>
-      <h3>{subtitle}</h3>
-      <p>{author.firstName} {author.lastName}</p>
-      <small>{new Date().toLocaleString()}</small>
-    </div>
-  </header>
-)}
+  return (
+    <header>
+      <div className='header-wrapper'>
+        <h1>{props.welcome}</h1>
+        <h2>{props.title}</h2>
+        <h3>{props.subtitle}</h3>
+        <p>{props.author.firstName} {props.author.lastName}</p>
+        <small>{new Date().toLocaleString()}</small>
+      </div>
+    </header>
+  )
+}
 
 const TechList = () => {
   const techs = ['HTML', 'JAVASCRIPT', 'CSS']
@@ -48,7 +43,7 @@ const TechList = () => {
 
 
 // JSX element, main
-const Main =()=> (
+const Main = () => (
   <main>
     <div className='main-wrapper'>
       <p>
@@ -59,8 +54,8 @@ const Main =()=> (
         :
       </p>
       <ul>
-        <TechList/>
-        <UserCard/>
+        <TechList />
+        <UserCard />
       </ul>
     </div>
   </main>
@@ -68,7 +63,7 @@ const Main =()=> (
 
 const copyRight = '2023';
 // JSX element, footer
-const Footer =()=> (
+const Footer = () => (
   <footer>
     <div className='footer-wrapper'>
       <p>Copyright &copy;{copyRight}</p>
@@ -77,18 +72,26 @@ const Footer =()=> (
 )
 
 // JSX element, app
-const App = ()=>(
+const App = () => (
   <div className='app'>
-    <Header welcome = 'Welcome to 30 Days of React'/>
-    <Main/>
-    <Footer/>
+    <Header
+      welcome='Welcome to 30 Days of React'
+      title='Getting Started React'
+      subtitle='JavaScript Library'
+      author={{
+        firstName: 'Glorry',
+        lastName: 'Sibomana',
+      }}
+    />
+    <Main />
+    <Footer />
   </div>
 )
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App/>
+    <App />
   </React.StrictMode>
 );
 
