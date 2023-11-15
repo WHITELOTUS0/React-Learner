@@ -69,15 +69,33 @@ const Header = (
   )
 }
 
-const TechList = () => {
-  const techs = ['HTML', 'JAVASCRIPT', 'CSS']
+const TechList = ({techs}) => {
+  
   const formattedTechs = techs.map((tech) => <li key={tech}>{tech}</li>)
   return formattedTechs
 }
 
+const Button = ({ text, onClick, style }) => (
+  <button style={style} onClick={onClick}>
+    {text}
+  </button>
+)
+
+// CSS styles in JavaScript Object
+const buttonStyles = {
+  backgroundColor: '#61dbfb',
+  padding: 10,
+  border: 'none',
+  borderRadius: 5,
+  margin: 3,
+  cursor: 'pointer',
+  fontSize: 18,
+  color: 'white',
+}
 
 // JSX element, main
-const Main = () => (
+const Main = ({techs, handleTime,greetPeople}) => {
+  return(
   <main>
     <div className='main-wrapper'>
       <p>
@@ -88,12 +106,14 @@ const Main = () => (
         :
       </p>
       <ul>
-        <TechList />
-        <UserCard />
+        <TechList techs={techs} />
       </ul>
+      <UserCard />
+      <Button text='Greet People' onClick={greetPeople} style={buttonStyles} />
+      <Button text='Show Time' onClick={handleTime} style={buttonStyles} />
     </div>
   </main>
-)
+)}
 
 const copyRight = '2023';
 // JSX element, footer
@@ -117,12 +137,24 @@ const App = () => {
     },
     date: new Date(),
   }
+  const techs = ['HTML', 'JAVASCRIPT', 'CSS']
+  const handleTime = () => {
+    alert(showDate(new Date()))
+  }
+  const greetPeople = () => {
+    alert('Welcome to 30 Days Of React Challenge, 2020')
+  }
+
 
 
   return (
     <div className='app'>
       <Header data={data} />
-      <Main />
+      <Main 
+      techs={techs} 
+      greetPeople={greetPeople}
+      handleTime={handleTime}
+      />
       <Footer />
     </div>
   )
