@@ -25,9 +25,9 @@ const showDate = (time) => {
   return ` ${month} ${date}, ${year}`
 }
 
-const UserCard = () => (
+const UserCard = ({ user: { firstName, lastName, image } }) => (
   <div>
-    <motion.img src={rickmorty} alt='rick and morty' style={{ height: '300px', width: '300px', borderRadius: '50%', overflow: 'hidden' }}
+    <motion.img src={image} alt='rick and morty' style={{ height: '300px', width: '300px', borderRadius: '50%', overflow: 'hidden' }}
       animate={{
         x: ["0%", "200%", "100%"], // animate the image's horizontal position
         y: ["0%", "0%", "0%"], // animate the image's vertical position
@@ -37,6 +37,10 @@ const UserCard = () => (
         duration: 3, // duration of each animation cycle
       }}
     />
+    <h2>
+      {firstName}
+      {lastName}
+    </h2>
   </div>
 )
 
@@ -94,7 +98,7 @@ const buttonStyles = {
 }
 
 // JSX element, main
-const Main = ({techs, handleTime,greetPeople}) => {
+const Main = ({techs, handleTime,greetPeople, user}) => {
   return(
   <main>
     <div className='main-wrapper'>
@@ -108,7 +112,7 @@ const Main = ({techs, handleTime,greetPeople}) => {
       <ul>
         <TechList techs={techs} />
       </ul>
-      <UserCard />
+      <UserCard user={user}/>
       <Button text='Greet People' onClick={greetPeople} style={buttonStyles} />
       <Button text='Show Time' onClick={handleTime} style={buttonStyles} />
     </div>
@@ -138,11 +142,12 @@ const App = () => {
     date: new Date(),
   }
   const techs = ['HTML', 'JAVASCRIPT', 'CSS']
+  const user = {...data.author, image: rickmorty}
   const handleTime = () => {
     alert(showDate(new Date()))
   }
   const greetPeople = () => {
-    alert('Welcome to 30 Days Of React Challenge, 2020')
+    alert('Welcome to 30 Days Of React Challenge, 2023')
   }
 
 
@@ -151,6 +156,7 @@ const App = () => {
     <div className='app'>
       <Header data={data} />
       <Main 
+      user={user}
       techs={techs} 
       greetPeople={greetPeople}
       handleTime={handleTime}
