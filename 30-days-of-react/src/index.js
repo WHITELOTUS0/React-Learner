@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import rickmorty from './images/RickAndMorty.jpeg'
 import { motion } from 'framer-motion';
+import Header1 from './index_1';
 
 const showDate = (time) => {
   const months = [
@@ -129,6 +130,7 @@ const Footer = () => (
   </footer>
 )
 
+
 // JSX element, app
 const App = () => {
   const data = {
@@ -170,7 +172,7 @@ const App = () => {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Header1 />
   </React.StrictMode>
 );
 
