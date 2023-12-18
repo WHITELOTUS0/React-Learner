@@ -10,7 +10,7 @@ class Header extends React.Component {
         return (
             <header>
                 <div className='header-wrapper'>
-                    <h1>Welcome to 30 Days Of React</h1>
+                    <h1>{this.props.data.welcome}</h1>
                     <h2>Getting Started React</h2>
                     <h3>JavaScript Library</h3>
                     <p>Glorry Sibomana</p>
@@ -70,9 +70,19 @@ class App extends React.Component {
         super(props)
     }
     render() {
+        const data = {
+            welcome: 'Welcome to 30 Days Of React',
+            title: 'Getting Started React',
+            subtitle: 'JavaScript Library',
+            author: {
+              firstName: 'Glorry',
+              lastName: 'Sibomana',
+            },
+            date: 'Oct 7, 2020',
+          }
         return (
             <div className='app'>
-                <Header />
+                <Header data={data}/>
                 <Main />
                 <Footer />
             </div>
