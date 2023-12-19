@@ -7,13 +7,20 @@ class Header extends React.Component {
     }
 
     render() {
+        const{
+            welcome,
+            title,
+            subtitle,
+            author: {firstName, lastName},
+            date,
+        } = this.props.data
         return (
             <header>
                 <div className='header-wrapper'>
-                    <h1>{this.props.data.welcome}</h1>
-                    <h2>{this.props.data.title}</h2>
-                    <h3>{this.props.data.author.firstName} {this.props.data.author.lastName}</h3>
-                    <small>{this.props.data.date}</small>
+                    <h1>{welcome}</h1>
+                    <h2>{title}</h2>
+                    <h3>{firstName} {lastName}</h3>
+                    <small>{date}</small>
                     
                 </div>
             </header>
