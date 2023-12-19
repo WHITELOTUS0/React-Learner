@@ -11,10 +11,10 @@ class Header extends React.Component {
             <header>
                 <div className='header-wrapper'>
                     <h1>{this.props.data.welcome}</h1>
-                    <h2>Getting Started React</h2>
-                    <h3>JavaScript Library</h3>
-                    <p>Glorry Sibomana</p>
-                    <small>2023</small>
+                    <h2>{this.props.data.title}</h2>
+                    <h3>{this.props.data.author.firstName} {this.props.data.author.lastName}</h3>
+                    <small>{this.props.data.date}</small>
+                    
                 </div>
             </header>
         )
@@ -78,7 +78,7 @@ class App extends React.Component {
               firstName: 'Glorry',
               lastName: 'Sibomana',
             },
-            date: 'Oct 7, 2020',
+            date: 'Dec, 2023',
           }
         return (
             <div className='app'>
