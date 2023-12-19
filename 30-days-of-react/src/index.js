@@ -7,11 +7,11 @@ class Header extends React.Component {
     }
 
     render() {
-        const{
+        const {
             welcome,
             title,
             subtitle,
-            author: {firstName, lastName},
+            author: { firstName, lastName },
             date,
         } = this.props.data
         return (
@@ -19,9 +19,12 @@ class Header extends React.Component {
                 <div className='header-wrapper'>
                     <h1>{welcome}</h1>
                     <h2>{title}</h2>
-                    <h3>{firstName} {lastName}</h3>
+                    <h3>{subtitle}</h3>
+                    <p>
+                        {firstName} {lastName}
+                    </p>
                     <small>{date}</small>
-                    
+
                 </div>
             </header>
         )
@@ -82,14 +85,14 @@ class App extends React.Component {
             title: 'Getting Started React',
             subtitle: 'JavaScript Library',
             author: {
-              firstName: 'Glorry',
-              lastName: 'Sibomana',
+                firstName: 'Glorry',
+                lastName: 'Sibomana',
             },
             date: 'Dec, 2023',
-          }
+        }
         return (
             <div className='app'>
-                <Header data={data}/>
+                <Header data={data} />
                 <Main />
                 <Footer />
             </div>
@@ -99,7 +102,7 @@ class App extends React.Component {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
 );
