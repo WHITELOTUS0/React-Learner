@@ -216,7 +216,9 @@ class App extends React.Component {
   greetPeople = () => {
     alert('Welcome to 30 Days Of React Challenge, 2020')
   }
-  changeBackground = () => {}
+  changeBackground = () => {
+    this.setState(prevState => ({ isDarkMode: !prevState.isDarkMode }));
+  }
   render() {
     const data = {
       welcome: 'Welcome to 30 Days Of React',
@@ -232,9 +234,9 @@ class App extends React.Component {
     const date = new Date()
     // copying the author from data object to user variable using spread operator
     const user = { ...data.author, image: rickmorty }
-
+    document.body.className = this.state.isDarkMode ? 'dark' : ''
     return (
-      <div className='app'>
+      <div className='app' style={{ backgroundColor: this.state.isDarkMode ? 'black' : 'white' }}>
         {this.state.backgroundColor}
         <Header data={data} />
         <Main
