@@ -3,6 +3,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import rickmorty from './images/RickAndMorty.jpeg'
+import Trying from './tryState'
 
 // Fuction to show month date year
 
@@ -190,4 +191,4 @@ class App extends React.Component {
 }
 
 const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+ReactDOM.render(<Trying />, rootElement)
