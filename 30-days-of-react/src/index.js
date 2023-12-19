@@ -236,7 +236,7 @@ class App extends React.Component {
     const user = { ...data.author, image: rickmorty }
     document.body.className = this.state.isDarkMode ? 'dark' : ''
     return (
-      <div className='app' style={{ backgroundColor: this.state.isDarkMode ? 'black' : 'white' }}>
+      <div className='app' style={{ backgroundColor: this.state.isDarkMode ? '#303134' : 'white' }}>
         {this.state.backgroundColor}
         <Header data={data} />
         <Main
