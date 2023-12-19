@@ -36,7 +36,7 @@ class TechList extends React.Component {
         super(props)
     }
     render() {
-        const techs = ['HTML', 'CSS', 'JavaScript']
+        const {techs} = this.props
         const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
         return techsFormatted
     }
@@ -52,7 +52,7 @@ class Main extends React.Component {
                 <div className='main-wrapper'>
                     <p>Prerequisite to get started react.js:</p>
                     <ul>
-                        <TechList />
+                        <TechList techs={this.props.techs}/>
                     </ul>
                 </div>
             </main>
@@ -90,11 +90,12 @@ class App extends React.Component {
             },
             date: 'Dec, 2023',
         }
+        const techs = ['HTML', 'CSS', 'JavaScript']
         return (
             <div className='app'>
                 <Header data={data} />
-                <Main />
-                <Footer />
+                <Main techs={techs} />
+                <Footer date={new Date()}/>
             </div>
         )
     }
