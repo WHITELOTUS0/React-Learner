@@ -30,7 +30,7 @@ const showDate = (time) => {
 // User Card Component
 const UserCard = ({ user: { firstName, lastName, image } }) => (
   <div className='user-card'>
-    <img src={image} alt={firstName} style={{ height: '300px', width: '300px', borderRadius: '50%', overflow: 'hidden' }}/>
+    <img src={image} alt={firstName} style={{ height: '300px', width: '300px', borderRadius: '50%', overflow: 'hidden' }} />
     <h2>
       {firstName}
       {lastName}
@@ -179,7 +179,12 @@ class App extends React.Component {
       backgroundColor: '',
       color: '',
     },
-    isDarkMode:false
+    isDarkMode: false,
+    loggedIn: false
+  }
+
+  handleLogin = () => {
+    this.setState({ loggedIn: !this.state.loggedIn })
   }
   showDate = (time) => {
     const months = [
