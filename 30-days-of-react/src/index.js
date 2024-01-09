@@ -136,6 +136,9 @@ class Main extends React.Component {
           <ul>
             <TechList techs={techs} />
           </ul>
+          {techs.length === 3 && (
+            <p>You have all the prerequisite courses to get started React</p>
+          )}
           <UserCard user={user} />
           <Button
             text='Greet People'
@@ -247,11 +250,7 @@ class App extends React.Component {
       },
       date: 'Nov 2023',
     }
-    let status = this.state.loggedIn ? (
-      <h1>Welcome to 30 Days Of React</h1>
-    ) : (
-      <h3>Please Login</h3>
-    )
+    let status = this.state.loggedIn ? <Welcome/>:<Login/>
     const techs = ['HTML', 'CSS', 'JavaScript']
     const date = new Date()
     // copying the author from data object to user variable using spread operator
@@ -261,6 +260,12 @@ class App extends React.Component {
       <div className='app' style={{ backgroundColor: this.state.isDarkMode ? '#303134' : 'white' }}>
         {this.state.backgroundColor}
         <Header data={data} />
+        {status}
+        <Button
+          text={this.state.loggedIn ? 'Logout' : 'Login'}
+          style={buttonStyles}
+          onClick={this.handleLogin}
+        />
         <Main
           user={user}
           techs={techs}
