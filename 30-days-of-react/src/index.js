@@ -176,7 +176,12 @@ const Login = ()=>(
   <div>
     <h3>Login</h3>
   </div>
+)
 
+const Welcome = ()=>(
+  <div>
+    <h3>Welcome to 30 Days Of React</h3>
+  </div>
 )
 
 class App extends React.Component {
@@ -242,6 +247,11 @@ class App extends React.Component {
       },
       date: 'Nov 2023',
     }
+    let status = this.state.loggedIn ? (
+      <h1>Welcome to 30 Days Of React</h1>
+    ) : (
+      <h3>Please Login</h3>
+    )
     const techs = ['HTML', 'CSS', 'JavaScript']
     const date = new Date()
     // copying the author from data object to user variable using spread operator
