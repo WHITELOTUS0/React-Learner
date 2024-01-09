@@ -254,7 +254,7 @@ class App extends React.Component {
           minusOne={this.minusOne}
           count={this.state.count}
         />
-        <Footer date={new Date()} />
+        <Footer date={date} />
       </div>
     )
   }
