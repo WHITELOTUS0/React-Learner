@@ -172,6 +172,13 @@ class Footer extends React.Component {
   }
 }
 
+const Login = ()=>(
+  <div>
+    <h3>Login</h3>
+  </div>
+
+)
+
 class App extends React.Component {
   state = {
     count: 0,
