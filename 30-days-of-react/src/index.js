@@ -141,7 +141,7 @@ class Main extends React.Component {
           )}
           <UserCard user={user} />
           <Button
-            text='Greet People'
+            text="Greet People"
             onClick={greetPeople}
             style={buttonStyles}
           />
@@ -175,13 +175,13 @@ class Footer extends React.Component {
   }
 }
 
-const Login = ()=>(
+const Login = () => (
   <div>
     <h3>Login</h3>
   </div>
 )
 
-const Welcome = ()=>(
+const Welcome = () => (
   <div>
     <h3>Welcome to 30 Days Of React</h3>
   </div>
@@ -250,7 +250,7 @@ class App extends React.Component {
       },
       date: 'Nov 2023',
     }
-    let status = this.state.loggedIn ? <Welcome/>:<Login/>
+    let status = this.state.loggedIn ? <Welcome /> : <Login />
     const techs = ['HTML', 'CSS', 'JavaScript']
     const date = new Date()
     // copying the author from data object to user variable using spread operator
