@@ -132,7 +132,7 @@ class Main extends React.Component {
     return (
       <main>
         <div className='main-wrapper'>
-          <p>Prerequisite to get started react.js:</p>
+          <p>Prerequisites to get started react.js:</p>
           <ul>
             <TechList techs={techs} />
           </ul>
