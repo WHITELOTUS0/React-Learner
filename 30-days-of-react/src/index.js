@@ -137,7 +137,7 @@ class Main extends React.Component {
             <TechList techs={techs} />
           </ul>
           {techs.length === 3 && (
-            <p>You have all the prerequisite courses to get started React</p>
+            <p>You have all the prerequisite courses to get started in React</p>
           )}
           <UserCard user={user} />
           <Button
