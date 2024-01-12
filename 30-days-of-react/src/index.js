@@ -159,6 +159,7 @@ class Main extends React.Component {
 }
 
 // Footer Component
+
 // Class component
 class Footer extends React.Component {
   constructor(props) {
