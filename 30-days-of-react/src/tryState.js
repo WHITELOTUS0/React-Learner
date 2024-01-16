@@ -15,11 +15,11 @@ class Trying extends React.Component {
     }
 
     minusOne = ()=>{
-        this.setState({count:this.state.count-1})
+        this.setState({count:this.state.count-1} )
     }
 
     changeColor=()=>{
-        this.setState({bColor:this.state.bColor==="white"?"black":"white"}, this.textColor)
+        this.setState({bColor:this.state.bColor==="white"?"black":"white"},this.textColor)
     }
     
     textColor=()=>{
