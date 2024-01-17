@@ -38,8 +38,7 @@ const UserCard = ({ user: { firstName, lastName, image } }) => (
       }}
     />
     <h2>
-      {firstName}
-      {lastName}
+      {firstName} {lastName}
     </h2>
   </div>
 )
