@@ -22,6 +22,7 @@ class Trying extends React.Component {
         this.setState({bColor:this.state.bColor==="white"?"black":"white"},this.textColor)
     }
     textColor=()=>{
+    
         this.setState({color:this.state.bColor==="white"?"black":"white"})
     }
     render() {
